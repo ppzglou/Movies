@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_pager">
+
+    <fragment
+        android:id="@+id/navigation_pager"
+        android:name="com.example.movies.ui.pager.PagerFragment"
+        android:label="Pager"
+        tools:layout="@layout/fragment_pager" >
+        <action
+            android:id="@+id/action_navigation_pager_to_navigation_details"
+            app:destination="@id/navigation_details" />
+        <action
+            android:id="@+id/action_navigation_pager_to_navigation_addMovie"
+            app:destination="@id/navigation_addMovie" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_details"
+        android:name="com.example.movies.ui.details.DetailsFragment"
+        android:label="Movies Details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_addMovie"
+        android:name="com.example.movies.ui.addmovies.AddMovieFragment"
+        android:label="Add Movie"
+        tools:layout="@layout/fragment_add_movie" >
+    </fragment>
+
+</navigation>
